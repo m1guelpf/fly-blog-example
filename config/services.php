@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'fly' => [
+        'token'     => env('FLY_TOKEN'),
+        'site'	  => env('FLY_SITE')
+      ],
+
 ];
