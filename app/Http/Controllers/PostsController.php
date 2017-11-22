@@ -12,7 +12,7 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Show posts.
      *
@@ -22,9 +22,9 @@ class PostsController extends Controller
     {
         return view('posts', ['posts' => Post::all()]);
     }
-    
+
     /**
-     * Show a specific post
+     * Show a specific post.
      *
      * @return \Illuminate\Http\Response
      */
@@ -32,11 +32,12 @@ class PostsController extends Controller
     {
         return view('post')->withPost($post);
     }
-    
+
     /**
-     * Persist post to database
+     * Persist post to database.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -45,7 +46,7 @@ class PostsController extends Controller
         'title' => 'required|string',
         'body'  => 'required|string',
       ]));
-    
+
         return redirect()->route('post', $post);
     }
 }

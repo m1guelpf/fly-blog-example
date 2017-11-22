@@ -17,14 +17,15 @@ class DomainController extends Controller
     public function index($domain)
     {
         $user = User::where('domain', $domain)->findOrFail();
-        
+
         return view('posts', ['posts' => $user->posts]);
     }
 
     /**
-     * Persist a custom domain to database
+     * Persist a custom domain to database.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
