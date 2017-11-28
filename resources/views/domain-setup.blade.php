@@ -19,7 +19,7 @@
                           </div>
                     @endif
 
-                    @if(! is_null(Auth::user()->domain))
+                    @if(is_null(Auth::user()->domain))
                   		<form class="text-center" method="POST">
                           {{ csrf_field() }}
                           <input class="form-control" name="domain" type="text" placeholder="yourdomain.com" value="{{ old('domain') }}" required>
