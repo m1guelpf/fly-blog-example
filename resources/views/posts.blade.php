@@ -56,6 +56,7 @@
           <div class="card my-4">
             <p class="text-center"><a href="{{  route('login') }}">Login</a> to make a post</p>
           </div>
+          @endauth
         </div>
 
       </div>
