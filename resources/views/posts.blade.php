@@ -41,6 +41,7 @@
             <h5 class="card-header">New Post</h5>
             <div class="card-body">
               <form method="POST" action="{{ route('create') }}">
+              {{ csrf_token() }}
                 <div class="form-group">
                   <label for="title">Title:</label>
                   <input type="text" class="form-control" id="title" name="title">
@@ -49,6 +50,7 @@
                   <label for="body">Content:</label>
                     <textarea class="form-control" rows="5" id="body" name="body"></textarea>
                 </div>
+                <button class="btn btn-primary">Post</button>
               </form>
             </div>
           </div>
