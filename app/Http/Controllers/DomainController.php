@@ -36,6 +36,6 @@ class DomainController extends Controller
 
         $domain = Fly::connect(config('services.fly.token'))->createHostname(config('services.fly.site'), $request->input('domain'));
 
-        return redirect()->back()->withStatus("Success! To finish the setup, you need to point your domain to <b>{$domain['preview_hostname']}</b>. After that, everything's good to go.");
+        return redirect()->back()->withStatus("Success! To finish the setup, you need to point your domain to <b>{$domain['data']['attributes']['preview_hostname']}</b>. After that, everything's good to go.");
     }
 }
